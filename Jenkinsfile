@@ -20,9 +20,9 @@ pipeline {
 }
 stage("Code Analysis"){
 steps{
-bat './gradlew sonar'
+
   withSonarQubeEnv('URL') {
-                    bat "./gradlew sonarqube"
+                    bat "./gradlew sonar"
                 }
 }
 }
