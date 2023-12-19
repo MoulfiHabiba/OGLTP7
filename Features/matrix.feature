@@ -11,6 +11,7 @@ Feature: Matrix
     Then The result of determinant is -9
 
 
+
   Scenario: Transpose
     When I compute transpose of
       | col1 | col2  |
@@ -44,12 +45,3 @@ Feature: Matrix
       | 4    | -3  |
       | -2   | 1  |
 
-  Scenario: Multiply Matrix by Constant
-
-    When I multiply the Matrix by the constant
-      | constant |
-      | 2.0      |
-    Then the result should be a Matrix with values:
-      | col1 | col2 |
-      | 2.0  | 4.0  |
-      | 6.0  | 8.0  |

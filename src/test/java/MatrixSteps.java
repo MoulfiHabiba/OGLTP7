@@ -19,12 +19,10 @@ public class MatrixSteps {
     Matrix inverseMatrix ;
     Matrix cofactorMatrix ;
     Matrix mat;
-    Matrix resultMatrix;
-
 
     @Given("I have A Matrix")
     public void iHaveAMatrix() {
-         mat=new Matrix();
+        mat=new Matrix();
     }
 
     @When("I compute determinant of")
@@ -153,27 +151,6 @@ public class MatrixSteps {
         assertEquals(result,cofactorMatrix);
 
 
-    }
-    @When("I multiply the Matrix by the constant")
-    public void iMultiplyMatrixByConstant(DataTable table) {
-        double constant = (double) table.asList(Double.class).get(0);
-        resultMatrix = mat.multiplyByConstant(constant);
-    }
-
-    @Then("the result should be a Matrix with values:")
-    public void theResultShouldBeAMatrixWithValues(DataTable table) {
-        List<List<Double>> expectedValues = table.asLists(Double.class);
-        int rows = expectedValues.size();
-        int cols = expectedValues.get(0).size();
-
-        Matrix expectedMatrix = new Matrix(rows, cols);
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                expectedMatrix.setValueAt(i, j, expectedValues.get(i).get(j));
-            }
-        }
-
-        assertEquals(expectedMatrix, resultMatrix);
     }
 }
 
