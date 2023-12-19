@@ -18,6 +18,11 @@ pipeline {
 }
 
 }
+stage("Code Analysis"){
+steps{
+bat './gradlew sonar'
+}
+}
 }
 
 }
