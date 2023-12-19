@@ -39,6 +39,9 @@ steps{
                archiveArtifacts 'build/libs/*.jar'
            }
            }
+
+
+
 stage("Deploy"){
           steps {
               bat './gradlew publish'
