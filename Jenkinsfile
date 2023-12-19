@@ -38,6 +38,14 @@ steps{
                bat './gradlew javadoc'
                archiveArtifacts 'build/libs/*.jar'
            }
+           post {
+           always {
+           echo "Build stage complete" }
+           failure {
+           echo "Build failed"}
+           success {
+           echo "Build succeeded" }
+           }
            }
 
 
@@ -48,6 +56,12 @@ stage("Deploy"){
 
           }
           }
+stage("notification"){
+          steps{
+          notifyEvents message: 'Hello <b>world</b>', token: 'v1vwv5hma4ribtadfrsz3rbhjii-ba6s'
+          }
+}
+
 }
 
 }
