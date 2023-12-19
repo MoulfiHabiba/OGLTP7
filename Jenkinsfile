@@ -58,7 +58,7 @@ stage("Deploy"){
           }
 stage("notification"){
           steps{
-          notifyEvents message: 'Hello <b>world</b>', token: 'v1vwv5hma4ribtadfrsz3rbhjii-ba6s'
+          notifyEvents message: 'New notification', token: 'v1vwv5hma4ribtadfrsz3rbhjii-ba6s'
           }
 }
 
