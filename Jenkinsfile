@@ -54,6 +54,8 @@ stage("Deploy"){
           steps {
               bat './gradlew publish'
 
+
+
           }
           }
 stage("notification"){
