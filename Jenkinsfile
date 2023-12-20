@@ -59,6 +59,10 @@ stage("Deploy"){
 stage("notification"){
           steps{
           notifyEvents message: 'New notification', token: 'v1vwv5hma4ribtadfrsz3rbhjii-ba6s'
+          mail to: 'kh_moulfi@esi.dz',
+               subject: "Succes",
+               body:"Najahna"
+
           }
 }
 
